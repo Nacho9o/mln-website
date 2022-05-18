@@ -971,8 +971,8 @@ a {
   max-width: 60rem;
   width: 60%;
   height: 92vh;
-  max-height: 680px;
-  min-width: 350px;
+  max-height: 660px;
+  min-width: 375px;
   background-color: #232327;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
   border-radius: 1.5rem;
@@ -987,6 +987,12 @@ a {
 @media screen and (max-width: 56.25em) {
   .modal {
     width: 85%;
+  }
+}
+@media screen and (max-width: 37.5em) {
+  .modal {
+    width: 90%;
+    height: 90vh;
   }
 }
 .modal .modal__left {
@@ -1008,7 +1014,7 @@ a {
   height: 100%;
   position: absolute;
   right: 0;
-  padding: 2.5rem;
+  padding: 2.2rem;
 }
 @media screen and (max-width: 56.25em) {
   .modal .modal__right {
@@ -1022,6 +1028,12 @@ a {
   margin-bottom: 1rem;
   line-height: 113%;
   color: #F9F7EB;
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 56.25em) {
+  .modal .modal__right .title {
+    font-size: 2.8rem;
+  }
 }
 .modal .modal__right .note {
   color: #F9F7EB;
