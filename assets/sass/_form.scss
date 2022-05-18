@@ -1,0 +1,194 @@
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    max-width: 60rem;
+    width: 60%;
+    height: 92vh;
+    max-height: 680px;
+    min-width: 350px;
+    
+    background-color: $raisinBlack;
+    box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+    border-radius: 1.5rem;
+  
+    z-index: 1000000;
+    // transition: all .5s;
+    overflow: hidden;
+
+    @include respond (tab-land) {
+      width: 80%;
+    }
+    @include respond (tab-port) {
+      width: 85%;
+    }
+    // @include respond (phone) {
+    //   width: 85%;
+    // }
+  
+    .modal__left{
+      position: absolute;
+      width: 40%;
+      height: 100%;
+  
+      background-image: url(../img/photos/form.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      @include respond (tab-port) {
+        display: none;
+      }
+    }
+  
+    .modal__right{
+      width: 60%;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      padding: 2.5rem;
+
+      @include respond (tab-port) {
+        width: 100%;
+      }
+
+      // @include respond (phone) {
+      //   width: 100%;
+      // }
+      
+      .title {
+        // font-size: clamp(1.2rem, 2vw, 1.8rem);
+        font-size: 3rem;
+        font-weight: 600;
+        letter-spacing: -2px;
+        margin-bottom: 1rem;
+        line-height: 113%;
+        color: $oldLace;
+      }
+  
+      .note{
+        color: $oldLace;
+        letter-spacing: -.4px;
+        font-weight: 300;
+        margin-bottom: 1.8rem;
+        font-size: .9rem;
+      }
+      
+    }
+    &__form {
+      width: 100%;
+      height: auto;
+  
+      label,
+      input,
+      textarea{
+        display: block;
+        font-family: 'Poppins', sans-serif;
+      }
+  
+      label{
+        color: $oldLace;
+        font-size: 1.125;
+        letter-spacing: -.4px;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+  
+      input{
+        width: 100%;
+        height: 40px;
+        border-radius: 4px;
+        margin-bottom: .8rem;
+        padding: 1rem;
+        border: none;
+        outline: none;
+        background-color: $oldLace !important;
+        font-size: .8rem;
+        // background-color: transparent;
+        // border-bottom: 2px solid $oldLace;
+      }
+  
+      textarea{
+        height: 100px;
+        width: 100%;
+        font-size: .8rem;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        // padding: .4rem;
+        border: none;
+        outline: none;
+        min-width: 100%;
+        max-width: 100%;
+        max-height: 100px;
+        min-height: 100px;
+        background-color: $oldLace;
+        // background: none;
+        // border-bottom: 2px solid $oldLace;
+      }
+  
+      button{
+        padding: 1rem 2rem;
+        background-color: $jacarta;
+        border: none;
+        width: 100%;
+        border-radius: 4px;
+        // float: right;
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+        color: $oldLace;
+        font-size: 1.125;
+        letter-spacing: -.4px;
+        font-weight: 500;
+        text-transform: uppercase;
+        transition: all 200ms ease;
+  
+        &:hover{
+          box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+          transform: translateY(-2px);
+        }
+        &:active{
+          box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+          transform: translateY(-1px);
+        }
+      }
+    }
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 500000;
+    transition: all 0.5s;
+  }
+  
+  .btn--close-modal {
+    border: none;
+    position: absolute;
+    top: 1.7rem;
+    right: 1.7rem;
+    z-index: 100000;
+    width: 40px;
+    height: 40px;
+    background-color: $jacarta;
+    border-radius: 100%;
+    box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+    
+    svg{
+      cursor: pointer;
+      stroke: $white;
+    }
+  }
+  
+  .hidden {
+    visibility: hidden;
+    opacity: 0;
+  }

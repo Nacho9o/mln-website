@@ -1,0 +1,340 @@
+.header {
+  width: 100%;
+  max-width: 2000px;
+  height: 120vh;
+  min-height: 1000px;
+  margin-inline: auto;
+  position: relative;
+
+  @include respond (phone){
+    height: 100vh;
+    min-height: 780px;
+  }
+
+  .wrapper.sticky {
+    position: fixed;
+    background-color: rgba($color: $oldLace, $alpha: 0.99);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    // border-bottom: 1px solid rgba($color: $gray, $alpha: .1);
+    z-index: 420;
+
+    //    .get-in-touch{
+    //        border: none !important;
+    //        background-color: $veryPeri;
+    //        color: $antiFlashWhite;
+    //    }
+  }
+
+  .wrapper {
+    width: 100%;
+    height: 100px;
+    max-width: 2000px;
+
+    .nav {
+      width: 85%;
+      margin-inline: auto;
+
+      @include respond (phone){
+        width: 90%;
+      }
+
+      &__logo {
+        width: max-content;
+        --order: 1;
+        opacity: 0;
+        animation: fade 0.6s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        animation-delay: calc(var(--order) * 200ms);
+      }
+
+      &__list {
+        width: 70%;
+
+        @include respond (tab-land){
+          display: none;
+        }
+      }
+
+      &__item {
+        &:not(:last-child) {
+          margin-right: 2.2rem;
+        }
+        // --order: 1;
+        opacity: 0;
+        animation: fadeInBottom 0.6s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        animation-delay: calc(var(--order) * 100ms);
+      }
+
+      &__link {
+        color: $raisinBlack;
+        font-weight: 500;
+        letter-spacing: -0.6px;
+        transition: all 200ms cubic-bezier(0.77, 0, 0.175, 1);
+
+        &:hover{
+          color: $veryPeri;
+
+          .colored{
+            color: $veryPeri;
+          }
+        }
+      }
+      
+      .get-in-touch {
+        padding: 1rem;
+        border: 3px solid $raisinBlack;
+        // border-radius: 2rem;
+        background-color: $veryPeri;
+        color: $raisinBlack;
+        display: inline-block;
+        font-weight: 600;
+        --order: 6;
+        opacity: 0;
+        animation: fadeInBottom 0.6s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        animation-delay: calc(var(--order) * 100ms);
+        position: relative;
+        box-shadow: 4px 4px 0px $raisinBlack;
+
+        &:hover{
+          background-color: $raisinBlack;
+          color: $oldLace;
+        }
+      }
+
+      .toggle{
+        display: none;
+        width: 38px;
+        height: 38px;
+        background-color: $raisinBlack;
+        border-radius: 100%;
+        transition: all 200ms cubic-bezier(0.77, 0, 0.175, 1);
+        --order: 9;
+        opacity: 0;
+        animation: fade 0.6s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        animation-delay: calc(var(--order) * 200ms);
+
+        a{
+          width: 100%;
+          height: 100%;
+        }
+
+        @include respond (tab-land) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .hero {
+    width: 85%;
+    height: 110vh;
+    margin-inline: auto;
+    position: relative;
+
+    @include respond (phone){
+      width: 90%;
+      height: 90vh;
+    }
+
+    &__text {
+      width: 50%;
+
+      @include respond (tab-port){
+        width: 80%;
+        text-align: center;
+        margin-inline: auto;
+      }
+
+      @include respond (phone){
+        width: 100%;
+        text-align: center;
+      }
+
+      .title {
+        // font-size: 5.625rem;
+        // font-size: 3.562rem;
+        font-size: clamp(3.8rem, 6vw, 5.625rem);
+        letter-spacing: -5.5px;
+        // letter-spacing: clamp(-4px, 10vw, -6px);
+        font-weight: 600;
+        line-height: 113%;
+        color: $raisinBlack;
+
+        --order: 7;
+        opacity: 0;
+        animation: fadeInTop 0.6s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        animation-delay: calc(var(--order) * 150ms);
+
+        @include respond (phone){
+          letter-spacing: -4px;
+        }
+      }
+
+      .subtitle {
+        // font-size: 1.25rem;
+        font-size: clamp(1.125rem, 4vw, 1.25rem);
+        width: 70%;
+        font-weight: 400;
+        letter-spacing: -0.4px;
+        line-height: 186%;
+        color: $gray;
+        margin-top: 3rem;
+        --order: 8;
+        opacity: 0;
+        animation: fadeInTop 0.6s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        animation-delay: calc(var(--order) * 150ms);
+
+        @include respond (tab-land){
+          width: 85%;
+          font-size: 1.125rem;
+        }
+
+        @include respond (tab-port){
+          width: 80%;
+          margin-inline: auto;
+        }
+
+        @include respond (phone){
+          width: 76%;
+          margin-inline: auto;
+          margin-top: 2rem;
+        }
+      }
+
+      .action {
+        :not(:last-child) {
+          margin-right: 2rem;
+        }
+
+        margin-top: 3rem;
+        --order: 9;
+        opacity: 0;
+        animation: fadeInTop 0.6s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        animation-delay: calc(var(--order) * 150ms);
+
+        @include respond (tab-land){
+          :not(:last-child) {
+            margin-right: 1.8rem;
+          }
+        }
+
+        @include respond (tab-port){
+          width: max-content;
+          margin-inline: auto;
+        }
+
+        @include respond (phone){
+          // flex-direction: column;
+          width: max-content;
+          margin-inline: auto;
+          margin-top: 2rem;
+
+          :not(:last-child) {
+            margin-right: 0;
+          }
+        }
+
+        .proposal {
+          padding: 1rem;
+          // border-radius: 32px;
+          background-color: $veryPeri;
+          border: 3px solid $raisinBlack;
+          color: $raisinBlack;
+          font-weight: 600;
+          font-size: 1.25rem;
+          // box-shadow: 0px 25px 50px rgba($color: #000000, $alpha: .11);
+          transition: all 0.3s ease;
+          width: max-content;
+          box-shadow: 5px 5px 0px $raisinBlack;
+          letter-spacing: -.4px;
+
+          &:hover {
+            // box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+            // transform: translateY(-3px);
+            background-color: $raisinBlack;
+            color: $oldLace;
+          }
+          &:active {
+            // box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+            // transform: translateY(-1px);
+          }
+
+          @include respond (tab-land){
+            font-size: 1.06rem;
+          }
+
+          @include respond (phone){
+            font-size: 1rem;
+          }
+        }
+        .how-it-works {
+          color: $raisinBlack;
+          font-weight: 600;
+          font-size: 1.25rem;
+          letter-spacing: -.4px;
+
+          span {
+            margin-left: 1rem;
+
+            svg {
+              #elipse {
+                animation: animatedScroll 1s cubic-bezier(0.77, 0, 0.175, 1)
+                  alternate-reverse infinite;
+              }
+            }
+          }
+
+          @include respond (tab-land){
+            font-size: 1.1rem;
+          }
+
+          @include respond (phone){
+            // padding: 1rem;
+            width: max-content;
+            font-size: 1rem;
+            display: none;
+          }
+        }
+      }
+    }
+
+    &__img {
+      width: 50%;
+      --order: 10;
+      opacity: 0;
+      animation: fadeInTop 0.6s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+      animation-delay: calc(var(--order) * 150ms);
+
+      @include respond (tab-port){
+        display: none;
+      }
+
+      @include respond (phone){
+        // display: none;
+        // position: absolute;
+        // z-index: -1;
+      }
+
+      img {
+        width: max-content;
+        height: auto;
+        display: block;
+        // right: -2rem;
+        position: relative;
+        top: 2rem;
+
+        @include respond (big-desktop) {
+          width: 100%;
+        }
+
+        @include respond (phone){
+          display: none;
+          // right: -10rem;
+          // top: 10rem;
+          // width: 600px;
+          // opacity: .3;
+        }
+      }
+    }
+  }
+}

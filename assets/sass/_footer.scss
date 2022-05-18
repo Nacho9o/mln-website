@@ -1,0 +1,60 @@
+.footer {
+  width: 100%;
+  max-width: 2000px;
+  margin-inline: auto;
+  padding: 3rem 0;
+  background-color: $raisinBlack;
+
+  &__content {
+    width: 85%;
+    margin-inline: auto;
+
+    @include respond (phone){
+      flex-direction: column;
+    }
+
+    .left {
+      .logo {
+        margin-bottom: 2rem;
+      }
+      .author {
+        width: 30%;
+        p {
+          color: $oldLace;
+          font-size: 0.9rem;
+          font-weight: 300;
+        }
+
+        @include respond (tab-land) {
+          width: 60%;
+        }
+        @include respond (phone) {
+          margin-top: 1rem;
+          width: 80%;
+        }
+      }
+      margin-bottom: 4rem;
+    }
+
+    .right {
+      .icons {
+        width: max-content;
+
+        :not(:last-child) {
+          margin-right: 0.8rem;
+        }
+
+        @include respond (phone) {
+          margin-top: 3rem;
+        }
+      }
+      .icons > div {
+        background-color: $jacarta;
+        width: 48px;
+        height: 48px;
+        border-radius: 100%;
+        cursor: pointer;
+      }
+    }
+  }
+}

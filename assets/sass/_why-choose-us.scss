@@ -1,0 +1,158 @@
+.why-choose-us {
+  width: 100%;
+  max-width: 2000px;
+  margin-inline: auto;
+  padding-top: 8rem;
+  position: relative;
+  z-index: -1;
+  // background-color: $blueAccent;
+
+  .highlight {
+    position: absolute;
+    z-index: -1;
+
+    @include respond(tab-land) {
+      display: none;
+    }
+  }
+  .left {
+    top: 8%;
+    left: 12%;
+  }
+  .right {
+    top: 8%;
+    right: 10%;
+  }
+
+  &__content {
+    width: 85%;
+    margin-inline: auto;
+
+    @include respond(phone) {
+      width: 90%;
+    }
+
+    .text {
+      width: 70%;
+      text-align: center;
+      margin-inline: auto;
+
+      @include respond(phone) {
+        width: 100%;
+      }
+
+      .pre-title {
+        font-size: 22px;
+        line-height: 113%;
+        color: $raisinBlack;
+        margin-bottom: 2rem;
+      }
+
+      .title {
+        // font-size: 4rem;
+        font-size: clamp(2.8rem, 6vw, 4rem);
+        color: $raisinBlack;
+        font-weight: 600;
+        letter-spacing: -3px;
+        margin-bottom: 4rem;
+        width: 100%;
+        margin-inline: auto;
+
+        // @include respond(phone) {
+        //   font-size: 2.8rem;
+        // }
+      }
+    }
+
+    .advantages {
+      width: 100%;
+      margin: 8rem 0;
+
+      @include respond (tab-port) {
+        flex-direction: column;
+        margin: 6rem 0;
+      }
+
+      @include respond(phone) {
+        // flex-direction: column;
+        margin: 6rem 0;
+      }
+
+      &__img {
+        width: 50%;
+        height: auto;
+        border-radius: 2rem;
+        overflow: hidden;
+
+        @include respond (tab-land) {
+          width: 45%;
+        }
+
+        @include respond (tab-port) {
+          width: 85%;
+        }
+
+        @include respond(phone) {
+          width: 100%;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+
+      &__text {
+        width: 45%;
+        padding: 2rem;
+
+        @include respond (tab-land) {
+          width: 50%;
+        }
+
+        @include respond (tab-port) {
+          width: 85%;
+        }
+
+        .title {
+          font-size: 3rem;
+          color: $raisinBlack;
+          font-weight: 600;
+          letter-spacing: -3px;
+          margin-bottom: 2rem;
+          margin-inline: auto;
+
+          @include respond (tab-land) {
+            letter-spacing: -2px;
+            font-size: 2.4rem;
+          }
+
+          @include respond (tab-port) {
+            margin-top: 1rem;
+          }
+
+          @include respond(phone) {
+            margin-top: 2rem;
+          }
+        }
+
+        .description {
+          color: $raisinBlack;
+        }
+
+        @include respond(phone) {
+          width: 100%;
+          padding: 2rem 0;
+        }
+      }
+    }
+    .reverse {
+      flex-direction: row-reverse;
+
+      @include respond(tab-port) {
+        flex-direction: column;
+      }
+    }
+  }
+}
